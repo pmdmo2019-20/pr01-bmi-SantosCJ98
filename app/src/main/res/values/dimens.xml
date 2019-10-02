@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- TODO -->
+    <dimen name="llHorizontalPadding">20dp</dimen>
+    <dimen name="llVerticalPadding">25dp</dimen>
+    <dimen name="margin1">18dp</dimen>
+    <dimen name="weight_buttons">.5</dimen>
+    <dimen name="sizeRes">22sp</dimen>
 </resources>

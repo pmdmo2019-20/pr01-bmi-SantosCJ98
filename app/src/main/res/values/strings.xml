@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Body Mass Index</string>
+    <string name="lblWeight">Weight</string>
+    <string name="hint_kg">(kg)</string>
+    <string name="lblHeight">Height</string>
+    <string name="hint_m">(m)</string>
+    <string name="btnReset">RESET</string>
+    <string name="btnCalculate">CALCULATE BMI</string>
+    <string name="main_bmi">BMI: %.1f %s</string>
+    <string name="main_invalid_weight">Invalid weight</string>
+    <string name="main_invalid_height">Invalid height</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="main_overweight">Overweight</string>
+    <string name="grade1">Obesity class 1</string>
+    <string name="grade2">Obesity class 2</string>
+    <string name="grade3">Obesity class 3</string>
     <!-- TODO -->
 </resources>

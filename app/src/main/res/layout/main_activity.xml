@@ -8,6 +8,80 @@
     android:orientation="vertical"
     tools:context=".ui.main.MainActivity">
 
-    <!-- TODO -->
+    <LinearLayout
+        android:id="@+id/llRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/llHorizontalPadding"
+        android:paddingVertical="@dimen/llVerticalPadding"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblWeight"
+            android:text="@string/lblWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/txtWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_kg"
+            android:focusedByDefault="true"
+            android:inputType="numberDecimal"></EditText>
+
+        <TextView
+            android:id="@+id/lblHeight"
+            android:text="@string/lblHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin1">
+        </TextView>
+
+        <EditText
+            android:id="@+id/txtHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_m"
+            android:inputType="numberDecimal"></EditText>
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin1">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:text="@string/btnReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="@dimen/weight_buttons"></Button>
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:text="@string/btnCalculate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"></Button>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lblResult"
+            android:textSize="@dimen/sizeRes"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <ImageView
+            android:id="@+id/imgBmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bmi"></ImageView>
+
+    </LinearLayout>
 
 </LinearLayout>
