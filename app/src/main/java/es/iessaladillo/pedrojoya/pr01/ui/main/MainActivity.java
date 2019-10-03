@@ -69,60 +69,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void giveIBM() {
 
-        boolean error = false;
-
-
         float bmi;
-
-        float height = 0;
-
-        float weight = 0;
 
         BmiCalculator.BmiClasification bmi_class;
 
-        if (!isFloat(txtWeight.getText().toString())) {
-
-            error = true;
-
-            txtWeight.setError(getString(R.string.main_invalid_weight));
-
-        } else if (txtWeight.getText().toString().isEmpty() || Float.parseFloat(txtWeight.getText().toString()) <= 0) {
-
-            txtWeight.setError(getString(R.string.main_invalid_weight));
-
-            error = true;
-
-        } else {
-
-            weight = Float.parseFloat(txtWeight.getText().toString());
-
-        }
-
-        if (!isFloat(txtHeight.getText().toString())) {
-
-            error = true;
-
-            txtHeight.setError(getString(R.string.main_invalid_height));
-
-        } else if (txtHeight.getText().toString().isEmpty() || Float.parseFloat(txtHeight.getText().toString()) <= 0) {
-
-            txtHeight.setError(getString(R.string.main_invalid_height));
-
-            error = true;
+        boolean no_error = validateWeight() && validateHeight();
 
 
-        } else {
+        if (no_error) {
 
-            height = Float.parseFloat(txtHeight.getText().toString());
-
-
-        }
-
-
-        if (!error) {
-
-
-            bmi = bmiCalculator.calculateBmi(weight, height);
+            bmi = bmiCalculator.calculateBmi(Float.parseFloat(txtWeight.getText().toString()), Float.parseFloat(txtHeight.getText().toString()));
 
             bmi_class = bmiCalculator.getBmiClasification(bmi);
 
@@ -130,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
             txtHeight.setError(null);
 
-            setearIBM(bmi_class, bmi);
+            setIBM(bmi_class, bmi);
 
         }
 
@@ -138,7 +94,55 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setearIBM(BmiCalculator.BmiClasification bmi_class, float bmi) {
+    private boolean validateHeight() {
+
+
+
+        if (!isFloat(txtHeight.getText().toString())) {
+
+            txtHeight.setError(getString(R.string.main_invalid_height));
+
+            return false;
+
+        }
+
+        else if (txtHeight.getText().toString().isEmpty() || Float.parseFloat(txtHeight.getText().toString()) <= 0) {
+
+            txtHeight.setError(getString(R.string.main_invalid_height));
+
+            return false;
+
+        }
+
+            return true;
+
+
+    }
+
+    private boolean validateWeight() {
+
+        if (!isFloat(txtWeight.getText().toString())) {
+
+            txtWeight.setError(getString(R.string.main_invalid_weight));
+
+            return false;
+
+        }
+
+        else if (txtWeight.getText().toString().isEmpty() || Float.parseFloat(txtWeight.getText().toString()) <= 0) {
+
+            txtWeight.setError(getString(R.string.main_invalid_weight));
+
+            return false;
+
+        }
+
+            return true;
+
+
+    }
+
+    private void setIBM(BmiCalculator.BmiClasification bmi_class, float bmi) {
 
         switch (bmi_class) {
 
