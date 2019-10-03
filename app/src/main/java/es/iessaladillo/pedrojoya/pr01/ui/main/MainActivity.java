@@ -88,6 +88,26 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        else if (!validateWeight() && validateHeight()) {
+
+            txtWeight.setError(getString(R.string.main_invalid_weight));
+
+        }
+
+        else if (validateWeight() && !validateHeight()) {
+
+            txtHeight.setError(getString(R.string.main_invalid_height));
+
+        }
+
+        else {
+
+            txtWeight.setError(getString(R.string.main_invalid_weight));
+
+            txtHeight.setError(getString(R.string.main_invalid_height));
+
+        }
+
         hideKeyboard(btnCalculate);
 
     }
@@ -98,15 +118,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (!isFloat(txtHeight.getText().toString())) {
 
-            txtHeight.setError(getString(R.string.main_invalid_height));
-
             return false;
 
         }
 
-        else if (txtHeight.getText().toString().isEmpty() || Float.parseFloat(txtHeight.getText().toString()) <= 0) {
+        else if (txtHeight.getText().toString().isEmpty() || (Float.parseFloat(txtHeight.getText().toString()) <= 0 || Float.parseFloat(txtHeight.getText().toString()) > 10)) {
 
-            txtHeight.setError(getString(R.string.main_invalid_height));
+
 
             return false;
 
@@ -121,15 +139,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (!isFloat(txtWeight.getText().toString())) {
 
-            txtWeight.setError(getString(R.string.main_invalid_weight));
-
             return false;
 
         }
 
-        else if (txtWeight.getText().toString().isEmpty() || Float.parseFloat(txtWeight.getText().toString()) <= 0) {
-
-            txtWeight.setError(getString(R.string.main_invalid_weight));
+        else if (txtWeight.getText().toString().isEmpty() || (Float.parseFloat(txtWeight.getText().toString()) <= 0 || Float.parseFloat(txtWeight.getText().toString()) > 10000)) {
 
             return false;
 

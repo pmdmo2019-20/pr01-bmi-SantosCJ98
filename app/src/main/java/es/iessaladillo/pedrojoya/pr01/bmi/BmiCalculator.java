@@ -12,7 +12,7 @@ public class BmiCalculator {
      */
     public float calculateBmi(float weightInKgs, float heightInMeters) {
 
-        if (heightInMeters <= 0 || weightInKgs <= 0) {
+        if ((weightInKgs <= 0 || weightInKgs > 10000) || (heightInMeters <= 0 || heightInMeters > 10)) {
 
             throw new IllegalArgumentException();
 
