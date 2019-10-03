@@ -73,10 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
         BmiCalculator.BmiClasification bmi_class;
 
-        boolean no_error = validateWeight() && validateHeight();
 
-
-        if (no_error) {
+        if (validateWeight() && validateHeight()) {
 
             bmi = bmiCalculator.calculateBmi(Float.parseFloat(txtWeight.getText().toString()), Float.parseFloat(txtHeight.getText().toString()));
 
