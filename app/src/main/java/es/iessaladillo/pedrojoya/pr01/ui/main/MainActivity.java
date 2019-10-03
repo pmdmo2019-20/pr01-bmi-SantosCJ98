@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
         txtHeight.setText("");
 
+        txtWeight.setError(null);
+
+        txtHeight.setError(null);
+
         lblRes.setText("");
 
         imgImage.setImageResource(R.drawable.bmi);
@@ -82,17 +86,13 @@ public class MainActivity extends AppCompatActivity {
 
             txtWeight.setError(getString(R.string.main_invalid_weight));
 
-        }
-
-        else if (txtWeight.getText().toString().isEmpty() || Float.parseFloat(txtWeight.getText().toString()) <= 0) {
+        } else if (txtWeight.getText().toString().isEmpty() || Float.parseFloat(txtWeight.getText().toString()) <= 0) {
 
             txtWeight.setError(getString(R.string.main_invalid_weight));
 
             error = true;
 
-        }
-
-        else {
+        } else {
 
             weight = Float.parseFloat(txtWeight.getText().toString());
 
@@ -104,22 +104,16 @@ public class MainActivity extends AppCompatActivity {
 
             txtHeight.setError(getString(R.string.main_invalid_height));
 
-        }
-
-        else if (txtHeight.getText().toString().isEmpty() || Float.parseFloat(txtHeight.getText().toString()) <= 0) {
+        } else if (txtHeight.getText().toString().isEmpty() || Float.parseFloat(txtHeight.getText().toString()) <= 0) {
 
             txtHeight.setError(getString(R.string.main_invalid_height));
 
-             error = true;
+            error = true;
 
 
+        } else {
 
-        }
-
-        else {
-
-                height = Float.parseFloat(txtHeight.getText().toString());
-
+            height = Float.parseFloat(txtHeight.getText().toString());
 
 
         }
@@ -128,9 +122,7 @@ public class MainActivity extends AppCompatActivity {
         if (!error) {
 
 
-
-
-             bmi = bmiCalculator.calculateBmi(weight, height);
+            bmi = bmiCalculator.calculateBmi(weight, height);
 
             bmi_class = bmiCalculator.getBmiClasification(bmi);
 
@@ -189,11 +181,10 @@ public class MainActivity extends AppCompatActivity {
         try {
             Float.parseFloat(number);
             return true;
-        } catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
-
 
 
 }

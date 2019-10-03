@@ -6,7 +6,7 @@ package es.iessaladillo.pedrojoya.pr01.bmi;
 public class BmiCalculator {
 
     /**
-     * @param weightInKgs Weight of the person in kgs
+     * @param weightInKgs    Weight of the person in kgs
      * @param heightInMeters Height of the person in meters
      * @return The body mass index (BMI)
      */
@@ -18,7 +18,7 @@ public class BmiCalculator {
 
         }
 
-        return (float)(weightInKgs/Math.pow(heightInMeters, 2));
+        return (float) (weightInKgs / Math.pow(heightInMeters, 2));
     }
 
 
@@ -34,33 +34,23 @@ public class BmiCalculator {
 
             classification = BmiClasification.LOW_WEIGHT;
 
-        }
-
-        else if (bmi >= 18.5 && bmi < 25) {
+        } else if (bmi >= 18.5 && bmi < 25) {
 
             classification = BmiClasification.NORMAL_WEIGHT;
 
-        }
-
-        else if (bmi >= 25 && bmi < 30) {
+        } else if (bmi >= 25 && bmi < 30) {
 
             classification = BmiClasification.OVERWWEIGHT;
 
-        }
-
-        else if (bmi >= 30 && bmi < 35) {
+        } else if (bmi >= 30 && bmi < 35) {
 
             classification = BmiClasification.OBESITY_GRADE_1;
 
-        }
-
-        else if (bmi >= 35 && bmi < 40) {
+        } else if (bmi >= 35 && bmi < 40) {
 
             classification = BmiClasification.OBESITY_GRADE_2;
 
-        }
-
-        else {
+        } else {
 
             classification = BmiClasification.OBESITY_GRADE_3;
 
